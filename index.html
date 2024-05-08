@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>WebChat</title>
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap"
+            rel="stylesheet"
+        > -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="modal-styles.css">
+    </head>
+    <body>
+        <header>
+            <div id="tittle">WebChat</div>
+            <span class="navigation__group" id="log_in">
+                <img class="icon" src="assets/message.svg" alt="Message">
+                <img class="icon" src="assets/notification.svg" alt="Notification">
+                <img class="profile" src="assets/joe-doe-profile.png" alt="Joe Doe Picture">
+            </span>
+            <span class="navegation__group" id="log_out">
+                <div class="action-buttons ">
+                    <a href="#log-in" title="Log in" class="secondary">
+                        Log In
+                    </a>
+                    <a href="#sign-up" title="Sign up" class="primary">
+                        Sign up
+                    </a>
+                </div>
+            </span>
+            <div class="dropdown__wrapper hide dropdown__wrapper--fade-in none">
+                <div class="dropdown__group">
+                    <div class="user-name">Joe Doe</div>
+                    <div class="email">joe.doe@atheros.ai</div>
+                </div>
+                <hr class="divider">
+                <nav>
+                    <ul>
+                        <li>
+                            <img src="assets/profile.svg" alt="Profile"> My Profile
+                        </li>
+                        <li>
+                            <img src="assets/settings.svg" alt="Settings"> Settings
+                        </li>
+                    </ul>
+                    <hr class="divider">
+                    <ul>
+                        <li>
+                            <img src="assets/tutorials.svg" alt="Tutorials"> Tutorials
+                        </li>
+                        <li>
+                            <img src="assets/help.svg" alt="Help"> Help Center
+                        </li>
+                    </ul>
+                    <hr class="divider">
+                    <ul>
+                        <li>
+                            <img src="assets/premium.svg" alt="Premium">Go Premium
+                        </li>
+                        <li style="color: #E3452F;">
+                            <img src="assets/logout.svg" alt="Log Out">Log out
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section></section>
+
+
+        <div class="login-wrapper">
+            <div class="login-side">
+                <!-- <a href="#" title="Logo">
+                    <img class="logo" src="assets/logo.png" alt="Logo">
+                </a> -->
+                <div class="my-form__wrapper">
+                    <div class="login-welcome-row">
+                        <h1>Welcome back &#x1F44F;</h1>
+                        <p>Please enter your details!</p>
+                    </div>
+                    <form class="my-form">
+                        <div class="socials-row">
+                            <a
+                                href="#"
+                                title="Use Google"
+                            >
+                                <img src="assets/google.png" alt="Google">
+                                Log in with Google
+                            </a>
+                            <a
+                                href="#"
+                                title="Use Apple"
+                            >
+                                <img src="assets/apple.png" alt="Apple">
+                                Log in with Apple
+                            </a>
+                        </div>
+                        <div class="divider">
+                            <div class="divider-line"></div>
+                            Or
+                            <div class="divider-line"></div>
+                        </div>
+                        <div class="text-field">
+                            <label for="email">Email:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Your Email"
+                                required
+                            >
+                            <img
+                                alt="Email Icon"
+                                title="Email Icon"
+                                src="assets/email.svg"
+                            >
+                        </div>
+                        <div class="text-field">
+                            <label for="password">Password:</label>
+                            <input
+                                id="password"
+                                type="password"
+                                name="password"
+                                placeholder="Your Password"
+                                title="Minimum 6 characters at 
+                                    least 1 Alphabet and 1 Number"
+                                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                                required
+                            >
+                            <img
+                                alt="Password Icon"
+                                title="Password Icon"
+                                src="assets/password.svg"
+                            >
+                        </div>
+                        <input type="submit" class="my-form__button" value="Login">
+                        <div class="my-form__actions">
+                            <div class="my-form__row">
+                                <span>Did you forget your password?</span>
+                                <a href="#" title="Reset Password">
+                                    Reset Password
+                                </a>
+                            </div>
+                            <div class="my-form__signup">
+                                <a href="#" title="Create Account">
+                                    Create Account
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="info-side">
+                <img src="assets/man.png" alt="Mock" class="mockup">
+                <div class="welcome-message">
+                    <h2>WebChat! 👋</h2>
+                    <p>
+                        Your ultimate web messaging exchange platform,
+                        communicate better and faster.
+                    </p>    
+                </div>
+            </div>
+        </div>
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
+
+
+
