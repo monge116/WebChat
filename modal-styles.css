@@ -16,7 +16,12 @@ body {
     box-sizing: border-box;
     font-family: Mulish, sans-serif;
 }
-
+#login_form{
+   display: none;
+}
+#sign_up_form{
+   display: none;
+}
 .socials-row {
     display: flex;
     gap: 1rem;
@@ -75,7 +80,7 @@ body {
 
 
 .login-side {
-    padding: 11.75rem 2rem 3rem 2rem;
+    padding: 6rem 2rem 3rem 2rem;
     display: flex;
     justify-content: center;
     align-items: start;

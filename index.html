@@ -27,10 +27,10 @@
             </span>
             <span class="navegation__group" id="log_out">
                 <div class="action-buttons ">
-                    <a href="#log-in" title="Log in" class="secondary">
+                    <a href="#log-in" title="Log in" class="secondary" onclick="fLoginWrapper()">
                         Log In
                     </a>
-                    <a href="#sign-up" title="Sign up" class="primary">
+                    <a href="#sign-up" title="Sign up" class="primary" onclick="fSignUpWrapper()">
                         Sign up
                     </a>
                 </div>
@@ -74,12 +74,12 @@
         <section></section>
 
 
-        <div class="login-wrapper">
-            <div class="login-side">
+        <div class="login-wrapper" id="login_form">
+            <div class="login-side" >
                 <!-- <a href="#" title="Logo">
                     <img class="logo" src="assets/logo.png" alt="Logo">
                 </a> -->
-                <div class="my-form__wrapper">
+                <div class="my-form__wrapper" >
                     <div class="login-welcome-row">
                         <h1>Welcome back &#x1F44F;</h1>
                         <p>Please enter your details!</p>
@@ -130,6 +130,132 @@
                                 placeholder="Your Password"
                                 title="Minimum 6 characters at 
                                     least 1 Alphabet and 1 Number"
+                                
+                                required
+                            >
+                            <img
+                                alt="Password Icon"
+                                title="Password Icon"
+                                src="assets/password.svg"
+                            >
+                        </div>
+                        <input type="submit" class="my-form__button" value="Login" onclick="floggedIn()">
+                        <div class="my-form__actions">
+                            <div class="my-form__row">
+                                <span>Did you forget your password?</span>
+                                <a href="#" title="Reset Password">
+                                    Reset Password
+                                </a>
+                            </div>
+                            <div class="my-form__signup">
+                                <a href="#" title="Create Account" onclick="fSignUpWrapper()">
+                                    Create Account
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="info-side">
+                <img src="assets/man.png" alt="Mock" class="mockup">
+                <div class="welcome-message">
+                    <h2>WebChat! 👋</h2>
+                    <p>
+                        Your ultimate web messaging exchange platform,
+                        communicate better and faster.
+                    </p>    
+                </div>
+            </div>
+        </div>
+
+        <div class="login-wrapper" id="sign_up_form">
+            <div class="login-side" >
+                <!-- <a href="#" title="Logo">
+                    <img class="logo" src="assets/logo.png" alt="Logo">
+                </a> -->
+                <div class="my-form__wrapper" >
+                    <div class="login-welcome-row">
+                        <h1> Sign up &#x270F;&#xFE0F;</h1>
+                        <p>Please enter your data!</p>
+                    </div>
+                    <form class="my-form">
+                        <!-- <div class="socials-row">
+                            <a
+                                href="#"
+                                title="Use Google"
+                            >
+                                <img src="assets/google.png" alt="Google">
+                                Log in with Google
+                            </a>
+                            <a
+                                href="#"
+                                title="Use Apple"
+                            >
+                                <img src="assets/apple.png" alt="Apple">
+                                Log in with Apple
+                            </a>
+                        </div>
+                        <div class="divider">
+                            <div class="divider-line"></div>
+                            Or
+                            <div class="divider-line"></div>
+                        </div> -->
+                        <div class="text-field">
+                            <label for="email">Name:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Your name"
+                                required
+                            >
+                            <img
+                                alt="Email Icon"
+                                title="Email Icon"
+                                src="assets/email.svg"
+                            >
+                        </div>
+                        <div class="text-field">
+                            <label for="email">Last Name:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Your last name"
+                                required
+                            >
+                            <img
+                                alt="Email Icon"
+                                title="Email Icon"
+                                src="assets/email.svg"
+                            >
+                        </div>
+                        <div class="text-field">
+                            <label for="email">Email:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Your Email"
+                                required
+                            >
+                            <img
+                                alt="Email Icon"
+                                title="Email Icon"
+                                src="assets/email.svg"
+                            >
+                        </div>
+                        <div class="text-field">
+                            <label for="password">Password:</label>
+                            <input
+                                id="password"
+                                type="password"
+                                name="password"
+                                placeholder="Your password"
+                                title="Minimum 6 characters at 
+                                    least 1 Alphabet and 1 Number"
                                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
                                 required
                             >
@@ -139,22 +265,42 @@
                                 src="assets/password.svg"
                             >
                         </div>
-                        <input type="submit" class="my-form__button" value="Login">
+                        <div class="text-field">
+                            <label for="password">Repeat password:</label>
+                            <input
+                                id="password"
+                                type="password"
+                                name="password"
+                                placeholder="Your password"
+                                title="Minimum 6 characters at 
+                                    least 1 Alphabet and 1 Number"
+                                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                                required
+                            >
+                            <img
+                                alt="Password Icon"
+                                title="Password Icon"
+                                src="assets/password.svg"
+                            >
+                        </div>
+                        <input type="submit" class="my-form__button" value="Sign Up" >
                         <div class="my-form__actions">
                             <div class="my-form__row">
-                                <span>Did you forget your password?</span>
-                                <a href="#" title="Reset Password">
-                                    Reset Password
+                                <span>Already have an account?</span>
+                                <a href="#" title="Reset Password" onclick="fLoginWrapper()">
+                                    Log in
                                 </a>
                             </div>
-                            <div class="my-form__signup">
+                            <!-- <div class="my-form__signup">
                                 <a href="#" title="Create Account">
                                     Create Account
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </form>
                 </div>
+
+
             </div>
             <div class="info-side">
                 <img src="assets/man.png" alt="Mock" class="mockup">

@@ -60,16 +60,17 @@ footer{
     
 }
 #log_in{
-    
+   display: none;
 }
 #log_out{
-    display: none;   
+    display: block;
 }
 .action-buttons {
     display: flex;
     gap: 0.5rem;
     align-items: center;
     flex-wrap: nowrap;
+    
 }
 .action-buttons a {
     text-decoration: none;
@@ -78,12 +79,13 @@ footer{
     padding: 0.25rem 0.5rem;
     transition: all 0.2s ease-in-out;
     line-height: 1.25rem;
+    font-size: 20px;
 }
 .secondary {
     background: none;
     color: var(--white);
     outline: none;
-    border: 1px solid var(--gray-border);
+    border: 2px solid var(--gray-border);
     border-radius: 0.375rem;
 }
 
