@@ -120,11 +120,12 @@ body {
     max-width: 22.5rem;
 }
 
-.logo {
+.cerrar {
     height: 3rem;
     position: absolute;
     top: 1.25rem;
     left: 1.25rem;
+    cursor: pointer;
 }
 
 .my-form__wrapper {
@@ -268,7 +269,10 @@ body {
     letter-spacing: .03rem;
     z-index: 10;
 }
-
+.eliminar{
+    position: absolute;
+    
+}
 @media (max-width: 640px) {
     .login-wrapper {
         grid-template-columns: 1fr;

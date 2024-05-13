@@ -17,10 +17,13 @@ document.addEventListener("click", (event) => {
         dropdown.classList.add('dropdown__wrapper--fade-in');
     }
 });
-login = document.getElementById("login_form");
-signup = document.getElementById("sign_up_form")
-buttons = document.getElementById("log_out")
-perfil = document.getElementById("log_in")
+const login = document.getElementById("login_form");
+const  signup = document.getElementById("sign_up_form")
+const buttons = document.getElementById("log_out")
+const perfil = document.getElementById("log_in")
+function fCerrarWrapper(){
+    document.querySelector(".login-wrapper").style.display = "none"
+}
 function fLoginWrapper(){
     login.style.display = "grid"
     signup.style.display = "none"
@@ -31,11 +34,36 @@ function fSignUpWrapper(){
 }
 function floggedIn(){
     
-    if(document.getElementById("email").value != null && document.getElementById("password").value != null){
+    if(document.getElementById("email").value != "" && document.getElementById("password").value != ""){
         console.log("hola")
-        // login.style.display = "none"
+        login.style.display = "none"
         buttons.style.display = "none"
         perfil.style.display = "flex"
+    }else{
+        console.log("no")
+    }
+    
+}
+
+function fsingUp(){
+    console.log(document.getElementById("l-name").value); 
+    l_name = document.getElementById("l-name")
+    l_lastname = document.getElementById("l-lastname")
+    l_email = document.getElementById("l-email")
+    l_password = document.getElementById("l-password")
+    l_r_password = document.getElementById("l-r-password")
+    if(l_name.value != "" && l_lastname.value != "" && l_email.value != "" && l_password.value != "" && l_r_password.value != ""){
+        fLoginWrapper()
+        l_name.value = ""
+        l_lastname.value = "" 
+        l_email.value = ""
+        l_password.value = ""
+        l_r_password.value = ""
+        console.log("ha")
+        
+        
+    }else{
+        console.log("no")
     }
     
 }

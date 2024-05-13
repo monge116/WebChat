@@ -73,9 +73,13 @@
         </header>
         <section></section>
 
-
+        
         <div class="login-wrapper" id="login_form">
+            
             <div class="login-side" >
+                <div class="cerrar" onclick="fCerrarWrapper()">
+                    <img src="assets/icons8-eliminar.svg" alt="">
+                </div>
                 <!-- <a href="#" title="Logo">
                     <img class="logo" src="assets/logo.png" alt="Logo">
                 </a> -->
@@ -128,8 +132,6 @@
                                 type="password"
                                 name="password"
                                 placeholder="Your Password"
-                                title="Minimum 6 characters at 
-                                    least 1 Alphabet and 1 Number"
                                 
                                 required
                             >
@@ -180,34 +182,13 @@
                         <h1> Sign up &#x270F;&#xFE0F;</h1>
                         <p>Please enter your data!</p>
                     </div>
-                    <form class="my-form">
-                        <!-- <div class="socials-row">
-                            <a
-                                href="#"
-                                title="Use Google"
-                            >
-                                <img src="assets/google.png" alt="Google">
-                                Log in with Google
-                            </a>
-                            <a
-                                href="#"
-                                title="Use Apple"
-                            >
-                                <img src="assets/apple.png" alt="Apple">
-                                Log in with Apple
-                            </a>
-                        </div>
-                        <div class="divider">
-                            <div class="divider-line"></div>
-                            Or
-                            <div class="divider-line"></div>
-                        </div> -->
+                    <form class="my-form" >
                         <div class="text-field">
-                            <label for="email">Name:</label>
+                            <label >Name:</label>
                             <input
-                                type="email"
-                                id="email"
-                                name="email"
+                                type="name"
+                                id="l-name"
+                                name="name"
                                 placeholder="Your name"
                                 required
                             >
@@ -218,11 +199,11 @@
                             >
                         </div>
                         <div class="text-field">
-                            <label for="email">Last Name:</label>
+                            <label >Last Name:</label>
                             <input
-                                type="email"
-                                id="email"
-                                name="email"
+                                type="lastname"
+                                id="l-lastname"
+                                name="lastname"
                                 placeholder="Your last name"
                                 required
                             >
@@ -233,10 +214,10 @@
                             >
                         </div>
                         <div class="text-field">
-                            <label for="email">Email:</label>
+                            <label >Email:</label>
                             <input
                                 type="email"
-                                id="email"
+                                id="l-email"
                                 name="email"
                                 placeholder="Your Email"
                                 required
@@ -248,15 +229,12 @@
                             >
                         </div>
                         <div class="text-field">
-                            <label for="password">Password:</label>
+                            <label >Password:</label>
                             <input
-                                id="password"
+                                id="l-password"
                                 type="password"
                                 name="password"
                                 placeholder="Your password"
-                                title="Minimum 6 characters at 
-                                    least 1 Alphabet and 1 Number"
-                                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
                                 required
                             >
                             <img
@@ -266,15 +244,12 @@
                             >
                         </div>
                         <div class="text-field">
-                            <label for="password">Repeat password:</label>
+                            <label >Repeat password:</label>
                             <input
-                                id="password"
+                                id="l-r-password"
                                 type="password"
                                 name="password"
                                 placeholder="Your password"
-                                title="Minimum 6 characters at 
-                                    least 1 Alphabet and 1 Number"
-                                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
                                 required
                             >
                             <img
@@ -283,11 +258,11 @@
                                 src="assets/password.svg"
                             >
                         </div>
-                        <input type="submit" class="my-form__button" value="Sign Up" >
+                        <input type="submit" class="my-form__button" value="Sign Up" onclick="fsingUp()">
                         <div class="my-form__actions">
                             <div class="my-form__row">
                                 <span>Already have an account?</span>
-                                <a href="#" title="Reset Password" onclick="fLoginWrapper()">
+                                <a href="#" title="Log-in" onclick="fLoginWrapper()">
                                     Log in
                                 </a>
                             </div>
