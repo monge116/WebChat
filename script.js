@@ -1,4 +1,7 @@
 
+function fInicio(){
+    fMostrarUsuarios();
+}
 const profile = document.querySelector('.profile');
 const dropdown = document.querySelector('.dropdown__wrapper');
 
@@ -49,6 +52,18 @@ function fMostrarModal(modal){
 // function fSignUpWrapper(){
     
 // }
+function fNoti(action){
+    
+    if(action == 'prox'){
+        document.getElementById('noti-incorrecto').classList.add('mostrar-noti');
+        setTimeout(fQuitarNoti, 3000)
+    }
+    
+}
+function fQuitarNoti(){
+    document.getElementById('noti-incorrecto').classList.remove('mostrar-noti');
+    // document.getElementById('noti-incorrecto').classList.remove('mostrar-noti');
+}
 function floggedIn(){
     
     if(document.getElementById("email").value != "" && document.getElementById("password").value != ""){
@@ -84,4 +99,249 @@ function fsingUp(){
     }
     
 }
+function fMostrarUsuarios(){
+    const URL = 'assets/php/servidor.php?peticion=CargarUsuarios';
+    fetch(URL)
+        .then ((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            
+        let html = "";
+        for (i =0; i<data.datos.length; i++) {
+        //    html+= "<div>" + data.datos[i].foto_foto + "</div>"
+            let id = data.datos[i].id;
+            let nombre = data.datos[i].nombre;
+            let apellido = data.datos[i].apellido;
+            let alias = data.datos[i].alias;
+            let foto = data.datos[i].foto;
+            let ruta = 'assets/imágenes/photo/'
+            
+            
+           
+                html+= 
+            `
+                    <div id='user' onclick='fMostrarPerfil(${id})'>
+
+                        <div id='photo'>
+                            <img src="${ruta + foto}">
+                        </div>
+                        <div>
+                            <div id='nombre'>
+                                ${nombre} ${apellido}
+                            </div>
+                            <div id='alias'>
+                                ${"@" + alias}
+                            </div>
+                        </div>
+                        <div id='arrow'>
+                           <img src="assets/arrow1.svg"> 
+                        </div>
+                        
+                    </div>
+            `;
+            
+            
+        
+        }
+        document.querySelector("#users").innerHTML = "<div class='container'>"+ html + "</div>";
+
+            
+    })
+}
+function fMostrarPerfil(id){
+    const URL = 'assets/php/servidor.php?peticion=CargarInfoUsuario&id='+id;
+    fetch(URL)
+        .then ((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            
+        let html = "";
+        for (i =0; i<data.datos.length; i++) {
+        //    html+= "<div>" + data.datos[i].foto_foto + "</div>"
+            let id = data.datos[i].id;
+            let nombre = data.datos[i].nombre;
+            let apellido = data.datos[i].apellido;
+            let alias = data.datos[i].alias;
+            let descripcion = data.datos[i].descripción_larga;
+            let correo = data.datos[i].correo;
+            // let contraseña = data.datos[i].contra;
+            // let fecha_nacimiento = data.datos[i].fecha;
+            let genero = data.datos[i].genero;
+            let foto = data.datos[i].foto;
+            let ruta = 'assets/imágenes/photo/'
+            
+            
+           
+                html+= 
+            `
+                    <div class='container' id='info-detallada'>
+                        <div id='photo-big'>
+                            <img src="${ruta + foto}">
+                        </div>
+                        <div>
+                            <div id='nombre-big'>
+                                ${nombre} ${apellido}
+                            </div>
+                            <div id='alias-big'>
+                                ${"@" + alias}
+                            </div>
+                            <div id='desc-big'>
+                                ${descripcion}
+                            </div>
+                            <div id='correo-big'>
+                                ${correo}
+                            </div>
+                           
+                            <div id='genero-big'>
+                                ${'Genero: '+genero}
+                            </div>
+                        </div>
+                        <div id='modify' onclick='fMostrarForm(${id})'>
+                            <img src="assets/modify.svg">
+                        </div>
+                        <div id='return' onclick='fMostrarUsuarios()'>
+                            <img src="assets/arrow-return.svg">
+                        </div>
+
+                    </div>
+            `;
+            
+            
+        
+        }
+        document.querySelector("#users").innerHTML =  html ;
+
+            
+    })
+}
+function fMostrarForm(id){
+    const URL = 'assets/php/servidor.php?peticion=CargarInfoUsuario&id='+id;
+    fetch(URL)
+        .then ((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            
+        let html = "";
+        for (i =0; i<data.datos.length; i++) {
+        //    html+= "<div>" + data.datos[i].foto_foto + "</div>"
+            // let id = data.datos[i].id;
+            let nombre = data.datos[i].nombre;
+            let apellido = data.datos[i].apellido;
+            let alias = data.datos[i].alias;
+            let descripcion = data.datos[i].descripción_larga;
+            let correo = data.datos[i].correo;
+            let contraseña = data.datos[i].contra;
+            let fecha = data.datos[i].fecha;
+            let genero = data.datos[i].genero;
+            let foto = data.datos[i].foto;
+            
+            
+           
+                html+= 
+            `
+                    <div class='container' id='info-detallada'>
+
+                    <div class="my-form">
+                    <form class="text-field">
+                        <label>Nombre: </label>
+                        <input
+                            id="nombre"
+                            value="${nombre}"
+                            type="text"
+                        >
+                    </div>
+                    <div class="text-field">
+                        <label>Apellido: </label>
+                        <input      
+                            id="apellido"
+                            value="${apellido}"
+                            type="text"
+                        >
+                    </div>
+                    <div class="text-field">
+                        <label>Alias: </label>
+                        <input      
+                            id="alias"
+                            value="${alias}"
+                            type="text"
+                        >
+                    </div>
+                    <div class="text-field">
+                        <label>Descripcion: </label>
+                       
+                        <input      
+                            id="desc"
+                            value="${descripcion}"
+                            type="text"
+                        >
+                    </div>
+                    <div class="text-field">
+                        <label>Correo: </label>
+                        <input      
+                            id="correo"
+                            value="${correo}"
+                            type="text"
+                        >
+                    </div>
+                    <div class="text-field">
+                        <label>Genero: </label>
+                        <input      
+                            id="genero"
+                            value="${genero}"
+                            type="text"
+                        >
+                    </div>
+                    <input type="submit" class="my-form__button" value="Confirmar" onclick="fActualizar(${id},'${contraseña}', '${fecha}', '${foto}')">
+            
+                    <div id='return' onclick='fMostrarPerfil(${id})'>
+                            <img src="assets/arrow-return.svg">
+                    </div>
+                </form>
+            </div>
+            `;
+            
+            
+        
+        }
+        document.querySelector("#users").innerHTML =  html ;
+
+            
+    })
+}
+
+function fActualizar(id,contraseña, fecha, foto){
+    let nombre = document.querySelector("#nombre").value;
+    let apellido = document.querySelector("#apellido").value;
+    let alias = document.querySelector("#alias").value;
+    let desc = document.querySelector("#desc").value;
+    let correo = document.querySelector("#correo").value;
+    let genero = document.querySelector("#genero").value;
+    let devolucion = "";
+    
+    console.log(nombre)
+    let sql = `UPDATE usuario SET 
+                nombre='${nombre}',
+                apellido='${apellido}',
+                alias='${alias}',
+                descripción_larga='${desc}',
+                contraseña='${contraseña}',
+                fecha_nacimiento='${fecha}',
+                correo='${correo}',
+                genero='${genero}',
+                foto='${foto}'
+            WHERE id=${id}`;
+
+    console.log(sql);
+
+    let URL = 'assets/php/servidor.php?peticion=ModificarUsuario';
+    URL += "&sql=" + sql;
+    URL += "&devolucion="  + devolucion;
+    fetch(URL)
+        .then ((response) => response.json())
+        .then((data) => {
+            console.log("crud asiganaturas ", data); 
+            fMostrarPerfil(id);
+})
+}
+
 
