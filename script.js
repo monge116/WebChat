@@ -21,17 +21,34 @@ const login = document.getElementById("login_form");
 const  signup = document.getElementById("sign_up_form")
 const buttons = document.getElementById("log_out")
 const perfil = document.getElementById("log_in")
-function fCerrarWrapper(){
-    document.querySelector(".login-wrapper").style.display = "none"
+function fCerrarWrapper(modal){
+    if(modal == login){
+        login.style.display = "none"
+    }
+    if(modal == signup){
+        signup.style.display = "none"
+    }
+    
 }
-function fLoginWrapper(){
-    login.style.display = "grid"
-    signup.style.display = "none"
+function fMostrarModal(modal){
+    if(modal == login){
+        login.style.display = "grid"
+        signup.style.display = "none"
+    }
+    if(modal== signup){
+        
+        signup.style.display = "grid"
+        login.style.display = "none"
+    }
+        
+      
 }
-function fSignUpWrapper(){
-    signup.style.display = "grid"
-    login.style.display = "none"
-}
+// function fLoginWrapper(){
+    
+// }
+// function fSignUpWrapper(){
+    
+// }
 function floggedIn(){
     
     if(document.getElementById("email").value != "" && document.getElementById("password").value != ""){
