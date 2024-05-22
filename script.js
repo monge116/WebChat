@@ -199,6 +199,9 @@ function fMostrarPerfil(id){
                         <div id='modify' onclick='fMostrarForm(${id})'>
                             <img src="assets/modify.svg">
                         </div>
+                        <div id='trash' onclick='fMostrarForm(${id})'>
+                            <img src="assets/trash.svg">
+                        </div>
                         <div id='return' onclick='fMostrarUsuarios()'>
                             <img src="assets/arrow-return.svg">
                         </div>

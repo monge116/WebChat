@@ -284,6 +284,15 @@ footer{
 #modify>img{
     width: 20px;
 }
+#trash{
+    position: absolute;
+    top: 10px;
+    right: 45px;
+    
+}
+#trash>img{
+    width: 22px;
+}
 #return{
     /* position: absolute;
     right: 10px; */
